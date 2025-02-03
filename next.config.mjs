@@ -54,7 +54,7 @@ const nextConfig = {
 
     if (!isServer) {
       // Optimize client-side bundle
-      if (config.optimization.splitChunks && config.optimization.splitChunks !== false) {
+      // if (config.optimization.splitChunks && config.optimization.splitChunks !== false) {
       config.optimization.splitChunks.cacheGroups = {
         ...config.optimization.splitChunks.cacheGroups,
         commons: {
@@ -62,7 +62,7 @@ const nextConfig = {
           name: 'vendors',
           chunks: 'all',
         },
-      };
+      // };
     }}
 
     return config;
