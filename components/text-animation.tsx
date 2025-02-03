@@ -26,7 +26,7 @@ export function TextAnimation() {
     <div className="w-full h-[200px] bg-[#0A0A0A] relative overflow-hidden rounded-xl">
       {/* Starry background */}
       <div className="absolute inset-0 bg-[url('/stars.svg')] opacity-20" />
-      
+
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-transparent animate-gradient-xy" />
 
@@ -39,9 +39,8 @@ export function TextAnimation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className={`text-center text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 ${
-              currentPhrase === phrases.length - 1 ? 'animate-pulse' : ''
-            }`}
+            className={`text-center text-2xl md:text-3xl lg:text-4xl font-bold text-is-gradient ${currentPhrase === phrases.length - 1 ? 'animate-pulse' : ''
+              }`}
             style={{
               textShadow: '0 0 10px rgba(104, 109, 224, 0.5), 0 0 20px rgba(104, 109, 224, 0.3)',
             }}

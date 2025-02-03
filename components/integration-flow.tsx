@@ -47,9 +47,9 @@ export function IntegrationFlow() {
   return (
     <div className="w-full h-[400px] bg-[#0A0A0A] relative overflow-hidden rounded-xl">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-transparent" />
-      
+
       <div className="absolute inset-0 flex flex-col">
-        <div className="flex-1 flex items-center justify-between px-16">
+        <div className="flex-1 flex items-center justify-between px-[20px] sm:px-16">
           {/* Scene 1: Tools Integration */}
           <div className="w-1/3 grid grid-cols-2 gap-8">
             {tools.map((tool, index) => (
@@ -59,7 +59,7 @@ export function IntegrationFlow() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeTool >= index ? 1 : 0.3 }}
               >
-                <div className="w-16 h-16 rounded-full bg-[#1A1A1A] border border-zinc-800 flex items-center justify-center">
+                <div className="w-[40px] h-[40px] sm:w-16 sm:h-16 rounded-full bg-[#1A1A1A] border border-zinc-800 flex items-center justify-center">
                   <tool.icon className="w-8 h-8 text-blue-400" />
                 </div>
                 <span className="mt-2 text-sm text-gray-300">{tool.name}</span>
@@ -75,7 +75,7 @@ export function IntegrationFlow() {
             }}
             transition={{ duration: 2, repeat: activeScene === 1 ? Infinity : 0 }}
           >
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 flex items-center justify-center">
+            <div className="sm:w-32 sm:h-32 w-[30px] h-[30px] rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 flex items-center justify-center">
               <Bot className="w-16 h-16 text-zinc-900" />
             </div>
             <motion.div
@@ -93,9 +93,9 @@ export function IntegrationFlow() {
 
           {/* Scene 3: Intelligent Responses */}
           <div className="w-1/3 flex flex-col items-center">
-            <div className="w-full h-48 bg-[#1A1A1A]/50 backdrop-blur-sm rounded-xl p-4 border border-zinc-800">
+            <div className="w-[150px] sm:w-full h-48 scale-75 sm:scale-100 bg-[#1A1A1A]/50 backdrop-blur-sm rounded-xl p-4 border border-zinc-800">
               <div className="text-sm text-gray-400 mb-2">Key Metrics</div>
-              <div className="flex justify-between h-32">
+              <div className="flex justify-between h-32 scale-75 sm:scale-100">
                 {[75, 45, 60, 90].map((height, index) => (
                   <motion.div
                     key={index}
@@ -112,7 +112,7 @@ export function IntegrationFlow() {
               {outputIcons.map((Icon, index) => (
                 <motion.div
                   key={index}
-                  className="w-10 h-10 rounded-full bg-[#1A1A1A] border border-zinc-800 flex items-center justify-center"
+                  className="w-[25px] h-[25px] sm:w-10 sm:h-10 rounded-full bg-[#1A1A1A] border border-zinc-800 flex items-center justify-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: activeScene >= 2 ? 1 : 0 }}
                   transition={{ delay: index * 0.2 }}

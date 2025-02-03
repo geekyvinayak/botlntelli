@@ -7,6 +7,7 @@ import { ArrowRight, CheckCircle2, Code, Database, Workflow, Users, Brain, Zap }
 import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card"
 import { LoadingSpinner } from '@/components/loading-spinner'
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer'
+import DoubelLayerButton from '@/components/ui/double-layer-button'
 
 // Dynamically import heavy components
 const AgentCards = dynamic(() => import('@/components/agent-cards').then(mod => mod.AgentCards), {
@@ -29,14 +30,14 @@ export default function Home() {
       <section className="relative">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800" />
-        
+
         {/* Hero Content */}
-        <div className="container relative pt-20 pb-16 md:pt-32 md:pb-24">
+        <div className="container relative pt-20 pb-16 md:pt-32 md:pb-24 mx-auto my-0">
           <div className="flex flex-col items-center text-center space-y-8">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Enterprise-grade{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+                <span className="text-is-gradient">
                   AI Assistant Platform
                 </span>
               </h1>
@@ -46,18 +47,19 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 min-w-[200px]">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700"
-                asChild
+              <DoubelLayerButton
+                href="/demo"
+                className="hidden md:inline-flex button "
               >
-                <Link href="/demo">
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/features">Explore Features</Link>
-              </Button>
+                Book a Demo
+              </DoubelLayerButton>
+              <DoubelLayerButton
+                href="/demo"
+                className="hidden md:inline-flex button "
+              >
+                Explore Features
+              </DoubelLayerButton>
+
             </div>
 
             {/* Add the TextAnimation component here */}
@@ -83,21 +85,24 @@ export default function Home() {
               <div className="text-center space-y-8 mb-12">
                 <h2 className="text-4xl font-bold tracking-tighter">
                   Specialized AI Agents for{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+                  <span className="text-is-gradient">
                     Every Need
                   </span>
                 </h2>
                 <div className="flex justify-center gap-4">
-                  <Button variant="outline" size="lg">
-                    Build Your Agent
-                  </Button>
-                  <Button 
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700"
-                    asChild
+
+                  <DoubelLayerButton
+                    href="/demo"
+                    className="hidden md:inline-flex button "
                   >
-                    <Link href="/demo">Try Demo</Link>
-                  </Button>
+                    Build Your Agent
+                  </DoubelLayerButton>
+                  <DoubelLayerButton
+                    href="/demo"
+                    className="hidden md:inline-flex button "
+                  >
+                    Try Demo
+                  </DoubelLayerButton>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden">
@@ -110,7 +115,7 @@ export default function Home() {
               <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl font-bold">
                   Seamless{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+                  <span className="text-is-gradient">
                     Integrations
                   </span>
                 </h2>

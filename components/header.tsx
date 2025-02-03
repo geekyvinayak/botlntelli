@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, Bot } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
+import DoubelLayerButton from "./ui/double-layer-button"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -28,7 +29,7 @@ export function Header() {
   }, [])
 
   const navigationMenuTriggerStyle = () => ({
-    className: "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+    className: "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
   })
 
   return (
@@ -40,10 +41,10 @@ export function Header() {
           : "bg-transparent"
       )}
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between ">
         <Link href="/" className="flex items-center space-x-2">
-          <Bot className="h-6 w-6 text-blue-600" />
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+          <Bot className="h-6 w-6 text-[var(--base-color)]" />
+          <span className="text-xl font-bold text-is-gradient">
             BotIntelli
           </span>
         </Link>
@@ -130,13 +131,15 @@ export function Header() {
           >
             <Link href="/login">Login</Link>
           </Button>
-          <Button
-            variant="default"
-            className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700"
-            asChild
+          <DoubelLayerButton
+            href="/demo"
+            className="hidden md:inline-flex button"
+            textClass="small-button-text "
           >
-            <Link href="/demo">Book a Demo</Link>
-          </Button>
+            Book a Demo
+          </DoubelLayerButton>
+
+          {/* <a href="/enterpret-in-action" className="button w-inline-block"data-faitracker-click-bind="true"><div className="button-text is-nav">Book a Demo</div></a> */}
 
           {/* Mobile Navigation */}
           <Sheet>

@@ -8,7 +8,7 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto space-y-4">
         <h1 className="text-4xl font-bold tracking-tighter text-center sm:text-5xl">
           About{" "}
-          <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+          <span className="text-is-gradient">
             Us
           </span>
         </h1>
@@ -150,14 +150,14 @@ export default function AboutPage() {
       {/* Join Us Section */}
       <Card className="border-2 bg-gradient-to-br from-blue-50 to-violet-50 dark:from-blue-900 dark:to-violet-900">
         <CardHeader>
-          <CardTitle className="text-2xl">Join Us</CardTitle>
+          <CardTitle className="text-2xl text-is-gradient">Join Us</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <p>
             We're not just building a product; we're building a movement. Join us in our mission to democratize AI and make it a force for positive change. Together, we can create a future where AI empowers everyone to achieve more, think bigger, and solve problems faster.
           </p>
           <p className="text-lg font-semibold">
-            Welcome to <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Botintelli</span>. Welcome to the future of accessible AI.
+            Welcome to <span className="text-is-gradient">Botintelli</span>. Welcome to the future of accessible AI.
           </p>
         </CardContent>
       </Card>

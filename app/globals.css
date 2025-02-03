@@ -6,10 +6,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
 }
 
 @layer base {
@@ -39,6 +41,7 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --btn-radius: 999px;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -47,7 +50,27 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    /* new variables */
+    --light-bg: #fff;
+    --dark-bg: #141219;
+    --gradient-color-1: rgba(37, 99, 235, 1);
+    --gradient-color-2: rgba(124, 58, 237, 1);
+    --base-color: #2563eb;
+    --dropdown-list-color: #2d1d34;
+    --dropdown-text-hover: #d8d3ff;
+    --dropdown-hover-color: #d8d3ff;
+    --dropdown-border: #ffffff1a;
+    --hover-button-cta-main: #2d1d34;
+    --dropdown-text-hover-bg: #70658366;
+    --nav-dropdown-link-icon-bg: #2d1d34;
+    --get-started-cta-color: #d220ff;
+    --divider: #f5f5f51a;
+    --footer-color: #1b1724;
+    --footer-text: #d8d3ff;
+    --form-placeholder-bg-color: #2720591a;
+    --tabs-dropdown: #2720591a;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -88,7 +111,61 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .button {
+    @apply text-white font-semibold no-underline flex p-[2px] rounded-full;
+    background-image: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2));
+  }
+
+  .button-text {
+    @apply text-center rounded-full px-[2.8125rem] py-[0.875rem] transition-all overflow-hidden text-sm;
+    /* Light Mode */
+    @apply bg-[var(--light-bg)] text-black;
+
+    /* Dark Mode */
+    @apply dark:bg-[var(--dark-bg)] dark:text-white;
+    animation: gradientMove 3s linear infinite;
+  }
+
+  .button-text:hover {
+    /* Light Mode */
+    @apply bg-transparent text-white;
+
+    /* Dark Mode */
+    @apply dark:bg-transparent;
+  }
+
+  .button-text.small-button-text {
+    @media (max-width: 768px) {
+      padding: 10px 15px 10px 10px;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+  }
+
+  .text-is-gradient {
+    background-image: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
+    color: transparent;
+    background-clip: text;
+  }
+
+  .bg-is-gradient {
+    background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: -200% 50%;
+    }
   }
 }

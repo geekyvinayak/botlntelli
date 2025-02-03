@@ -9,6 +9,10 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+	 container: {
+      center: true, // Ensures the container is centered (adds `margin: 0 auto;`)
+      padding: '1rem', // to have some space from edges
+    },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
