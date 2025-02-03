@@ -24,11 +24,6 @@ pnpm-debug.log*
 *.swp
 *.swo
 
-# NPM & Yarn
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # Logs
 logs/
 *.log
