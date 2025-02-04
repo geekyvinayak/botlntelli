@@ -19,6 +19,9 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import DoubelLayerButton from "@/components/ui/double-layer-button";
 import BubbleCard from "@/components/ui/bubble-card";
 import Typewriter from 'typewriter-effect';
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 
 
 // Dynamically import heavy components
@@ -46,6 +49,10 @@ export default function Home() {
   const [agentCardsRef, isAgentCardsVisible] = useIntersectionObserver();
   const [integrationsRef, isIntegrationsVisible] = useIntersectionObserver();
   const [segmentsRef, isSegmentsVisible] = useIntersectionObserver();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Animation runs only once
+    threshold: 0.2, // Triggers when 20% of the element is visible
+  });
 
   return (
     <>
@@ -101,13 +108,13 @@ export default function Home() {
             </div>
 
             {/* Add the TextAnimation component here */}
-            <div className="mt-12 w-full max-w-4xl mx-auto">
+            <div className="mt-12 w-full ">
               <TextAnimation />
             </div>
 
             {/* Feature Cards Grid */}
             <div className="flex justify-center w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8  px-4">
                 {keyFeatures.map((feature, i) => (
                   <Card
                     key={i}
@@ -169,10 +176,14 @@ export default function Home() {
                 Made for Industry Leaders
               </h2>
               <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8  px-4">
                   {isSegmentsVisible &&
                     segments.map((segment, i) => (
-                      <div
+                      <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                         key={i}
                         className="flex flex-col items-center text-center space-y-3"
                       >
@@ -183,7 +194,7 @@ export default function Home() {
                         <p className="text-muted-foreground">
                           {segment.description}
                         </p>
-                      </div>
+                      </motion.div>
                     ))}
                 </div>
               </div>
