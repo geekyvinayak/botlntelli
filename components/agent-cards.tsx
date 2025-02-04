@@ -338,17 +338,15 @@ const agents = [
 
 export function AgentCards() {
   return (
-    <div className="w-full p-4 md:p-8 rounded-xl">
-      <div className="w-full max-w-7xl mx-auto">
+    <div className="w-full  rounded-xl">
+      <div className="w-full mx-auto">
         {/* Responsive grid container */}
         <div className="grid items-center justify-center grid-cols-1 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-4">
           {agents.map((agent, index) => (
             <Card
               key={index}
               className={cn(
-                "bg-[#1A1A1A] border-zinc-800 relative group hover:border-zinc-700 transition-colors",
-                // Make cards responsive width
-                "sm:w-[200px] md:w-[220px]",
+                "bg-[#1A1A1A] border-zinc-800 relative group hover:border-zinc-700 transition-colors w-full",
                 // Adjust height for mobile
                 "h-[320px] sm:h-[360px]"
               )}
