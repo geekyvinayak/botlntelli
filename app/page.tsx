@@ -64,7 +64,7 @@ export default function Home() {
         <div className="container relative pt-20 pb-16 md:pt-32 md:pb-24 mx-auto my-0">
           <div className="flex flex-col items-center text-center space-y-8">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-[32px] font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Enterprise-grade{" "}
                 {/* <span className="text-is-gradient do-text-animation">AI Assistant Platform</span> */}
                 <Typewriter
@@ -72,9 +72,9 @@ export default function Home() {
                     loop: true,
                     wrapperClassName: "text-is-gradient do-text-animation",
                     // cursorClassName: "text-is-gradient do-text-animation",
-                    cursor:'🤖'
+                    cursor: '🤖'
                   }}
-                  
+
                   onInit={(typewriter) => {
                     typewriter.typeString('AI Assistant Platform')
                       .callFunction(() => {
