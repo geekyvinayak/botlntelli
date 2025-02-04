@@ -151,7 +151,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden">
-                {isAgentCardsVisible && <AgentCards />}
+              <AgentCards />
+                {/* {isAgentCardsVisible && <AgentCards />} */}
               </div>
             </div>
 
@@ -167,7 +168,8 @@ export default function Home() {
                   automated workflows and intelligent responses
                 </p>
               </div>
-              {isIntegrationsVisible && <IntegrationFlow />}
+              <IntegrationFlow />
+              {/* {isIntegrationsVisible && <IntegrationFlow />} */}
             </div>
 
             {/* Customer Segments */}
