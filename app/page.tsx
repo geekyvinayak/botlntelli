@@ -1,8 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   CheckCircle2,
@@ -14,15 +12,14 @@ import {
   Zap,
 } from "lucide-react";
 import {
-  Card,
-  CardContent,
-  CardTitle,
-  CardDescription,
+  Card
 } from "@/components/ui/card";
 import { LoadingSpinner } from "@/components/loading-spinner";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import DoubelLayerButton from "@/components/ui/double-layer-button";
 import BubbleCard from "@/components/ui/bubble-card";
+import Typewriter from 'typewriter-effect';
+
 
 // Dynamically import heavy components
 const AgentCards = dynamic(
@@ -61,8 +58,24 @@ export default function Home() {
           <div className="flex flex-col items-center text-center space-y-8">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Enterprise-grade{" "}<br/>
-                <span className="text-is-gradient do-text-animation">AI Assistant Platform</span>
+                Enterprise-grade{" "}
+                {/* <span className="text-is-gradient do-text-animation">AI Assistant Platform</span> */}
+                <Typewriter
+                  options={{
+                    loop: true,
+                    wrapperClassName: "text-is-gradient do-text-animation",
+                    cursorClassName: "text-is-gradient do-text-animation"
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter.typeString('AI Assistant Platform')
+                      .callFunction(() => {
+                        console.log('String typed out!');
+                      })
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .start();
+                  }}
+                />
               </h1>
               <p className="mx-auto max-w-[800px] text-gray-500 md:text-xl dark:text-gray-400">
                 Combine RAG (Retrieval-Augmented Generation), stateful
@@ -98,19 +111,13 @@ export default function Home() {
                     key={i}
                     className="flex flex-col items-center text-center "
                   >
-                    {/* <feature.icon className="h-12 w-12 text-blue-600 mb-4" />
-                    <CardTitle className="mb-2">{feature.title}</CardTitle>
-                    <CardDescription>{feature.description}</CardDescription> */}
                     <BubbleCard featureTitle={feature.title} featureDescription={feature.description}>
-                    <feature.icon className="h-12 w-12 text-blue-600 mb-4" />
-                      </BubbleCard>
+                      <feature.icon className="h-12 w-12 text-blue-600 mb-4" />
+                    </BubbleCard>
                   </Card>
                 ))}
               </div>
             </div>
-
-            {/* custom */}
-            
 
             {/* Agent Cards Section */}
             <div ref={agentCardsRef} className="container relative mt-16 mb-16">

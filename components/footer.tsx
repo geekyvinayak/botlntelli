@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container py-8 md:py-12">
-        <div className="flex flex-col lg:flex-row justify-between text-center">
+        <div className="flex flex-wrap lg:flex-row justify-between text-center">
 
           <div className="flex order-1 lg:-order-1 mt-5 lg:mt-0 ">
             <div className="flex flex-col gap-4  sm:flex-row sm:items-center sm:justify-between">
@@ -38,7 +38,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="space-y-4 text-left ">
+          <div className="space-y-4 text-left  w-[50%] lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Product</h4>
             <ul className="space-y-2">
               <li>
@@ -53,7 +53,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left mt-5 lg:mt-0">
+          <div className="space-y-4 text-left  w-[50%] lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Resources</h4>
             <ul className="space-y-2">
               <li>
@@ -68,7 +68,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left mt-5 lg:mt-0">
+          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Company</h4>
             <ul className="space-y-2">
               <li>
@@ -83,7 +83,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left mt-5 lg:mt-0">
+          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Legal</h4>
             <ul className="space-y-2">
               <li>

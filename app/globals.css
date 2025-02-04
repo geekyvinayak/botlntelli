@@ -153,22 +153,29 @@ body {
     color: transparent;
     background-clip: text;
   }
+
   .do-text-animation {
-    background-image: conic-gradient(
-      from 0deg,
-      var(--gradient-color-1),
-      var(--gradient-color-2)
-    );
-  
-    background-size: 200% 200%; /* Makes the animation more visible */
-    animation: moveGradient 3s infinite linear;
+    background-image: conic-gradient(from 0deg,
+        var(--gradient-color-1),
+        var(--gradient-color-2));
+    background-size: 200% 200%;
+    animation: moveGradient 10s infinite linear;
   }
+
   @keyframes moveGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 200% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
-  
+
 
   .bg-is-gradient {
     background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
