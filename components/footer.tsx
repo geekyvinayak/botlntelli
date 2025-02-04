@@ -8,9 +8,9 @@ export function Footer() {
       <div className="container py-8 md:py-12">
         <div className="flex flex-wrap lg:flex-row justify-between text-center">
 
-          <div className="flex order-1 lg:-order-1 mt-5 lg:mt-0 ">
-            <div className="flex flex-col gap-4  sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-col items-start gap-2 ">
+          <div className="flex order-1 w-full lg:w-auto lg:-order-1 mt-5 lg:mt-0 ">
+            <div className="flex flex-col gap-4  sm:flex-row sm:items-center sm:justify-between  w-full lg:w-auto">
+              <div className="flex flex-col  gap-2  w-full items-center lg:items-start lg:w-auto">
                 <Link href="/" className="flex  items-center space-x-2">
                   <Bot className="h-16 w-16 text-[var(--base-color)]" />
                   <span className="text-4xl font-bold text-is-gradient">
@@ -21,24 +21,10 @@ export function Footer() {
                   © {new Date().getFullYear()} Literatitech Solution Pvt. Ltd. All rights reserved.
                 </p>
               </div>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon">
-                  <Link href="https://twitter.com" target="_blank" rel="noreferrer">
-                    <span className="sr-only">Twitter</span>
-                    {/* Twitter Icon */}
-                  </Link>
-                </Button>
-                <Button variant="ghost" size="icon">
-                  <Link href="https://github.com" target="_blank" rel="noreferrer">
-                    <span className="sr-only">GitHub</span>
-                    {/* GitHub Icon */}
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
 
-          <div className="space-y-4 text-left  w-[50%] lg:w-auto">
+          <div className="space-y-4 text-left  w-[50%] items-center flex flex-col lg:block lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Product</h4>
             <ul className="space-y-2">
               <li>
@@ -53,7 +39,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left  w-[50%] lg:w-auto">
+          <div className="space-y-4 text-left  w-[50%] items-center flex flex-col lg:block lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Resources</h4>
             <ul className="space-y-2">
               <li>
@@ -68,7 +54,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] lg:w-auto">
+          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] items-center flex flex-col lg:block lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Company</h4>
             <ul className="space-y-2">
               <li>
@@ -83,7 +69,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] lg:w-auto">
+          <div className="space-y-4 text-left mt-5 lg:mt-0  w-[50%] items-center flex flex-col lg:block lg:w-auto">
             <h4 className="text-sm font-semibold text-is-gradient">Legal</h4>
             <ul className="space-y-2">
               <li>
