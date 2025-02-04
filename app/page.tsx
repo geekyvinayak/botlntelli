@@ -64,8 +64,10 @@ export default function Home() {
                   options={{
                     loop: true,
                     wrapperClassName: "text-is-gradient do-text-animation",
-                    cursorClassName: "text-is-gradient do-text-animation"
+                    // cursorClassName: "text-is-gradient do-text-animation",
+                    cursor:'🤖'
                   }}
+                  
                   onInit={(typewriter) => {
                     typewriter.typeString('AI Assistant Platform')
                       .callFunction(() => {
