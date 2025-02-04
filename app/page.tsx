@@ -106,13 +106,13 @@ export default function Home() {
             </div>
 
             {/* Add the TextAnimation component here */}
-            <div className="mt-12 w-full max-w-4xl mx-auto">
+            <div className="mt-12 w-full ">
               <TextAnimation />
             </div>
 
             {/* Feature Cards Grid */}
             <div className="flex justify-center w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8  px-4">
                 {keyFeatures.map((feature, i) => (
                   <Card
                     key={i}
@@ -174,7 +174,7 @@ export default function Home() {
                 Made for Industry Leaders
               </h2>
               <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8  px-4">
                   {isSegmentsVisible &&
                     segments.map((segment, i) => (
                       <motion.div
